@@ -1,0 +1,26 @@
+# Rock, paper, scissors game played between computer and user
+
+import random # module random 
+
+choices = ["rock","paper","scissors"] # variable named choices contains list of options as string for players to choose from. 
+
+computer = random.choice(choices) # variable named computer that uses the module random to pick an option from the list in choices
+player = None # player variable initialised with no data  
+
+while player not in choices: # variable player if not picked a choice from variable choices then will keep asking input until it matches one of string options in choices
+  player = input("rock, paper or scissors?: ").lower()
+
+if player == computer:
+    print("computer: ",computer)
+    print("Player: ",player)
+    print("Tie!")
+elif player == "rock":
+    if computer == "paper":
+      print("computer: ",computer)
+      print("Player: ",player)
+      print("You lose")
+    if computer == "scissors":
+      print("computer: ",computer)
+      print("Player: ",player)
+      print("You win")
+     
