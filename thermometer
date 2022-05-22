@@ -1,0 +1,40 @@
+from tkinter import *
+
+def submit():
+    print("The temperature is: "+ str(scale.get())+ " degrees C")
+
+window = Tk()
+
+hotImage = PhotoImage(file='sun.png')
+hotlabel = Label(image=hotImage)
+hotlabel.pack()
+
+scale = Scale(window,
+              from_=100,
+              to=0,
+              length=600,
+              orient=VERTICAL,
+              font=("Consolas",20),
+              tickinterval=10,  # adds numeric indicators for value
+              showvalue= 1, #   hide current value
+              troughcolor='grey',
+              fg= 'red',
+              bg= 'black')
+
+
+scale.set(((scale['from']-scale['to'])/2)+scale['to']) #sets current value of slider
+scale.pack()
+
+coldImage = PhotoImage(file='cold.png')
+coldlabel = Label(image=coldImage)
+coldlabel.pack()
+
+button = Button(window,
+                text='submit',
+                command=submit,
+                font='Arial',
+                )
+button.pack()
+
+
+window.mainloop()
